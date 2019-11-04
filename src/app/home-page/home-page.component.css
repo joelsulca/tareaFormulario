@@ -1,0 +1,19 @@
+:host {
+  background-image: url('https://universitario.pe/media/images/banners/slide_monumental_K0omiK7.jpg');
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  display: grid;
+  height: 100%;
+}
+h1 {
+  margin-top: 50px;
+  justify-content: center;
+  display: grid;
+  color: white;
+}
+.btn-login {
+  vertical-align: middle;
+  text-align: center;
+}

@@ -1,0 +1,18 @@
+<mat-card>
+  <mat-card-title>{{title}}</mat-card-title>
+  <mat-card-content>
+    <form [formGroup]="formLogin">
+      <mat-form-field>
+        <input matInput placeholder="Correo" formControlName="email" type="email">
+        <mat-error *ngIf="formLogin.get('email').hasError('email') &&
+        !formLogin.get('email').hasError('required')">Digite correctamente su correo ej: usuario@ejemplo.com</mat-error>
+        <mat-error *ngIf="formLogin.get('email').hasError('required')">No puede quedar en vacío</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Contraseña" formControlName="password" type="password">
+      </mat-form-field>
+      <button mat-raised-button color="primary" [disabled]="formLogin.invalid" (click)="goDashboard()">Ingresar</button>
+    </form>
+
+  </mat-card-content>
+</mat-card>
