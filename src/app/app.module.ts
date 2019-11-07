@@ -3,17 +3,7 @@ import {NgModule} from '@angular/core';
 
 import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {
-  MatButtonModule,
-  MatCardModule,
-  MatFormFieldModule,
-  MatIconModule,
-  MatInputModule,
-  MatListModule,
-  MatProgressSpinnerModule,
-  MatSelectModule,
-  MatSidenavModule
-} from '@angular/material';
+import {MatButtonModule, MatCardModule, MatFormFieldModule, MatIconModule, MatInputModule, MatListModule} from '@angular/material';
 import {LoginFormComponent} from './login-form/login-form.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HomePageComponent} from './home-page/home-page.component';
@@ -39,11 +29,8 @@ import {PrescriptionService} from './services/prescription.service';
     MatButtonModule,
     FormsModule,
     ReactiveFormsModule,
-    MatProgressSpinnerModule,
-    MatSidenavModule,
     MatListModule,
-    MatIconModule,
-    MatSelectModule
+    MatIconModule
   ],
   providers: [UserService, PrescriptionService],
   bootstrap: [AppComponent]

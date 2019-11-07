@@ -1,4 +1,4 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-home-page',
@@ -6,15 +6,10 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
   styleUrls: ['./home-page.component.css']
 })
 export class HomePageComponent implements OnInit {
-  @Output() isLogin = new EventEmitter<boolean>();
 
   constructor() {
   }
 
   ngOnInit() {
-  }
-
-  login() {
-    this.isLogin.emit(true);
   }
 }

@@ -23,10 +23,13 @@ export class LoginFormComponent implements OnInit {
   }
 
   goToHome() {
-    if (this.userService.authUser(this.formLogin.getRawValue())) {
+    const data = this.formLogin.getRawValue();
+    data.email = data.email.trim();
+    data.password = data.password.trim();
+    if (this.userService.authUser(data)) {
       this.showHome.emit(true);
     } else {
-      alert('Correo o contraseña inválida')
+      alert('Correo o contraseña inválida');
     }
   }
 }
