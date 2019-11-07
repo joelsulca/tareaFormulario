@@ -21,5 +21,6 @@ export class PrescriptionFormComponent implements OnInit {
 
   addItem() {
     this.prescriptionService.addItem(this.prescriptionForm.getRawValue());
+    this.prescriptionForm.reset();
   }
 }
