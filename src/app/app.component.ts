@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   isVisible = false;
   loadSpinner = false;
-  showDashboard = false;
+  showHome = false;
   title = 'Inicio de sesión';
   openLogin(evt) {
     this.loadSpinner = true;
@@ -18,6 +18,6 @@ export class AppComponent {
     }, 1000);
   }
   dashboardVisible() {
-    this.showDashboard = true;
+    this.showHome = true;
   }
 }

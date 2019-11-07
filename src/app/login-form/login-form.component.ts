@@ -1,5 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {UserService} from '../services/user.service';
 
 @Component({
   selector: 'app-login-form',
@@ -9,8 +10,9 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 export class LoginFormComponent implements OnInit {
   @Input() title: string;
   formLogin: FormGroup;
-  @Output() showDashboard = new EventEmitter<boolean>();
-  constructor(private fb: FormBuilder) {
+  @Output() showHome = new EventEmitter<boolean>();
+
+  constructor(private fb: FormBuilder, private userService: UserService) {
     this.formLogin = this.fb.group({
       email: [null, [Validators.required, Validators.email]],
       password: [null, [Validators.required, Validators.minLength(3)]]
@@ -19,7 +21,12 @@ export class LoginFormComponent implements OnInit {
 
   ngOnInit() {
   }
-  goDashboard() {
-    this.showDashboard.emit(true);
+
+  goToHome() {
+    if (this.userService.authUser(this.formLogin.getRawValue())) {
+      this.showHome.emit(true);
+    } else {
+      alert('Correo o contraseña inválida')
+    }
   }
 }

@@ -1,6 +1,5 @@
-<app-login-form *ngIf="isVisible && !showDashboard" [title]="title" (showDashboard)="dashboardVisible()"></app-login-form>
+<app-login-form *ngIf="!showHome" [title]="title" (showHome)="dashboardVisible()"></app-login-form>
 <div class="loading-indicator" *ngIf="loadSpinner">
   <mat-spinner></mat-spinner>
 </div>
-<app-home-page (isLogin)="openLogin($event)" *ngIf="!isVisible"></app-home-page>
-<app-dashboard *ngIf="showDashboard"></app-dashboard>
+<app-home-page (isLogin)="openLogin($event)" *ngIf="showHome"></app-home-page>

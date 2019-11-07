@@ -11,7 +11,7 @@
       <mat-form-field>
         <input matInput placeholder="Contraseña" formControlName="password" type="password">
       </mat-form-field>
-      <button mat-raised-button color="primary" [disabled]="formLogin.invalid" (click)="goDashboard()">Ingresar</button>
+      <button mat-raised-button type="button" color="primary" [disabled]="formLogin.invalid" (click)="goToHome()">Ingresar</button>
     </form>
 
   </mat-card-content>

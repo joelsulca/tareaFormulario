@@ -1,0 +1,15 @@
+<div class="example-container">
+  <form [formGroup]="prescriptionForm">
+    <mat-form-field>
+      <input matInput placeholder="Título" formControlName="title">
+      <mat-error>Campo requerido, mínimo 3 caracteres</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <textarea matInput placeholder="Descripción" formControlName="description"></textarea>
+      <mat-error>Campo requerido</mat-error>
+    </mat-form-field>
+    <button mat-raised-button (click)="addItem()" [disabled]="prescriptionForm.invalid" color="primary">Agregar</button>
+  </form>
+
+</div>
